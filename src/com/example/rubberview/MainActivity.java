@@ -1,17 +1,31 @@
 package com.example.rubberview;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
-
+	private Button mReset;
+	private RubberView mRubberView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mReset = (Button) findViewById(R.id.reset);
+        mRubberView = (RubberView) findViewById(R.id.rubber);
+        mReset.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				mRubberView.reset();
+			}
+		});
     }
 
 
